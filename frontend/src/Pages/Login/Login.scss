@@ -1,0 +1,62 @@
+@use "../../scss/" as *;
+
+.full-w-h-ab {
+  background-image: $gradient;
+
+  width: 100%;
+  min-height: 100vh;
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  @include mobile {
+    display: flex;
+    justify-content: center;
+  }
+  @include tablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-return-home {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+}
+.typewriter h1 {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 100px;
+  border-radius: $border-radius;
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 0.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  .logo {
+    width: 100px;
+  }
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
